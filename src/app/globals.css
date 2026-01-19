@@ -1,0 +1,223 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: 'Google Sans Flex', sans-serif;
+  --font-heading: 'Google Sans', sans-serif;
+  --font-mono: 'Google Sans Code', monospace;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-neon-green: #00ff88;
+  --color-neon-blue: #00d4ff;
+  --color-neon-red: #ff3366;
+  --color-crypto-dark: #0a0a0f;
+  --color-crypto-card: #12121a;
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #0a0a0f;
+  --foreground: #e8e8ed;
+  --card: #12121a;
+  --card-foreground: #e8e8ed;
+  --popover: #12121a;
+  --popover-foreground: #e8e8ed;
+  --primary: #00ff88;
+  --primary-foreground: #0a0a0f;
+  --secondary: #1a1a24;
+  --secondary-foreground: #e8e8ed;
+  --muted: #1a1a24;
+  --muted-foreground: #6b6b7b;
+  --accent: #00d4ff;
+  --accent-foreground: #0a0a0f;
+  --destructive: #ff3366;
+  --border: rgba(255,255,255,0.08);
+  --input: rgba(255,255,255,0.08);
+  --ring: #00ff88;
+  --chart-1: #00ff88;
+  --chart-2: #00d4ff;
+  --chart-3: #ff3366;
+  --chart-4: #ffaa00;
+  --chart-5: #aa66ff;
+  --sidebar: #0d0d14;
+  --sidebar-foreground: #e8e8ed;
+  --sidebar-primary: #00ff88;
+  --sidebar-primary-foreground: #0a0a0f;
+  --sidebar-accent: #1a1a24;
+  --sidebar-accent-foreground: #e8e8ed;
+  --sidebar-border: rgba(255,255,255,0.08);
+  --sidebar-ring: #00ff88;
+}
+
+.dark {
+  --background: #0a0a0f;
+  --foreground: #e8e8ed;
+  --card: #12121a;
+  --card-foreground: #e8e8ed;
+  --popover: #12121a;
+  --popover-foreground: #e8e8ed;
+  --primary: #00ff88;
+  --primary-foreground: #0a0a0f;
+  --secondary: #1a1a24;
+  --secondary-foreground: #e8e8ed;
+  --muted: #1a1a24;
+  --muted-foreground: #6b6b7b;
+  --accent: #00d4ff;
+  --accent-foreground: #0a0a0f;
+  --destructive: #ff3366;
+  --border: rgba(255,255,255,0.08);
+  --input: rgba(255,255,255,0.08);
+  --ring: #00ff88;
+  --chart-1: #00ff88;
+  --chart-2: #00d4ff;
+  --chart-3: #ff3366;
+  --chart-4: #ffaa00;
+  --chart-5: #aa66ff;
+  --sidebar: #0d0d14;
+  --sidebar-foreground: #e8e8ed;
+  --sidebar-primary: #00ff88;
+  --sidebar-primary-foreground: #0a0a0f;
+  --sidebar-accent: #1a1a24;
+  --sidebar-accent-foreground: #e8e8ed;
+  --sidebar-border: rgba(255,255,255,0.08);
+  --sidebar-ring: #00ff88;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Google Sans Flex', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Google Sans', sans-serif;
+  }
+  .font-mono, [class*="font-mono"] {
+    font-family: 'Google Sans Code', monospace;
+  }
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 136, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(0, 255, 136, 0.6); }
+}
+
+@keyframes screen-shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+@keyframes red-flash {
+  0%, 100% { background-color: transparent; }
+  50% { background-color: rgba(255, 51, 102, 0.15); }
+}
+
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-screen-shake {
+  animation: screen-shake 0.5s ease-in-out;
+}
+
+.animate-red-flash {
+  animation: red-flash 0.3s ease-in-out 3;
+}
+
+.animate-ticker {
+  animation: ticker-scroll 20s linear infinite;
+}
+
+.animate-count-up {
+  animation: count-up 0.5s ease-out forwards;
+}
+
+.neon-text-green {
+  color: #00ff88;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5), 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.neon-text-blue {
+  color: #00d4ff;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5), 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.neon-text-red {
+  color: #ff3366;
+  text-shadow: 0 0 10px rgba(255, 51, 102, 0.5), 0 0 20px rgba(255, 51, 102, 0.3);
+}
+
+.crypto-card {
+  background: linear-gradient(135deg, #12121a 0%, #1a1a28 100%);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
