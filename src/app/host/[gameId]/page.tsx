@@ -134,7 +134,9 @@ export default function HostPage({ params }: { params: Promise<{ gameId: string 
       .on("postgres_changes", { event: "INSERT", schema: "public", table: "game_events", filter: `game_id=eq.${gameId}` }, (payload) => {
         const event = payload.new as GameEvent
         setEvents(prev => [...prev, event])
-      }).subscribe()
+      })
+    
+    gameChannel.subscribe()
 
     return () => { supabase.removeChannel(gameChannel) }
   }, [gameId, fetchGame, fetchPlayers])

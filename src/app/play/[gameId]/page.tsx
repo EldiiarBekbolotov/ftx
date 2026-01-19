@@ -68,7 +68,10 @@ export default function PlayPage({ params }: { params: Promise<{ gameId: string 
           setScreenShake(true)
           setTimeout(() => setScreenShake(false), 500)
           setTimeout(() => setShowJournalist(false), 8000)
-      }).subscribe()
+        }
+      })
+    
+    channel.subscribe()
 
     return () => { supabase.removeChannel(channel) }
   }, [gameId, fetchGame, fetchPlayer])
